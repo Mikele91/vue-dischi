@@ -1,9 +1,13 @@
 <template>
       <div class="album text-center">
-        <img class="py-3" :src= "info.poster" alt="info.title">
+        
+        <div class="container">
+
+        <img class="py-3 " :src= "info.poster" alt="info.title">
         <h3>{{info.title}}</h3>
-        <div>{{info.author}}</div>
+        <div class="text_author">{{info.author}}</div>
         <div>{{info.year}}</div>
+        </div>
     </div>
 </template>
 
@@ -23,10 +27,16 @@ export default {
 
 .album{
     background-color: $headerColor;
-    height: 300px;
+    height: 350px;
+    color: white;
+    h3{
+        font-size: 30px;
+
+    }
 }
 img{
-    max-width: 60%;
+    max-width: 150px;
+    height: 180px;
 }
 
 </style>
