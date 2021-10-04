@@ -3,7 +3,7 @@
     <div class="row row-cols-5">
         <div class="col mb-3" v-for= "(elm, index) in album" :key="index"> 
             <Album :info="elm" />
-            <!-- <Header @search ="searchAlbum"/> -->
+            <Header @search ="searchAlbum"/>
         </div>
         
     </div>
@@ -15,12 +15,12 @@
 <script>
 import axios from 'axios';
 import Album from './Album.vue'
-// import Header from './Header.vue'
+import Header from './Header.vue'
 export default { 
     name: "Albums",
     components: {
         Album,
-        // Header,
+        Header,
     },
     data(){
         return{

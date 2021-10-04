@@ -3,8 +3,8 @@
         <img src="../assets/images/spotify-logo.png" alt="" class="m-2">
         <form class="mx-5">
         <label for="musical-genre">Choose a Genre:</label>
-        <select v-model="inputMusic" name="musical-genre" id="musical-genre">
-          <option value="">ALL</option>
+        <select @change="$emit('search', inputMusic)" v-model="inputMusic" name="musical-genre" id="musical-genre">
+          <option  value="">ALL</option>
           <option value="jazz">Jazz</option>
           <option value="pop">Pop</option>
           <option value="rock">Rock</option>
