@@ -16,7 +16,6 @@ export default {
     name: "Album",
     props:{
         info: Object
-
     }
 
 }
