@@ -5,10 +5,7 @@
         <label for="musical-genre">Choose a Genre:</label>
         <select @change="$emit('search', inputMusic)" v-model="inputMusic" name="musical-genre" id="musical-genre">
           <option  value="">ALL</option>
-          <option value="jazz">Jazz</option>
-          <option value="pop">Pop</option>
-          <option value="rock">Rock</option>
-          <option value="metal">Metal</option>
+          <option v-for="(pluto,index) in ciccio" :key="index" :value="pluto">{{pluto}}</option>
         </select>
 
         </form>
@@ -22,6 +19,9 @@ data(){
   return{
     inputMusic:""
   }
+},
+props:{
+  ciccio:Array
 }
 }
 </script>

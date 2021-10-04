@@ -23,6 +23,7 @@ export default {
     data(){
         return{
             album:[],
+            genreAlbum:[],
         }
     },
     props:{
@@ -31,7 +32,7 @@ export default {
             musicFiltered(){
                     if(this.music!=""){
                         return this.album.filter(elm=> 
-                        elm.genre.toLowerCase() == this.music
+                        elm.genre == this.music
                     )    
                     }
                     return this.album
@@ -43,7 +44,13 @@ export default {
         axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then( (res)=> {
-            this.album= res.data.response ;
+            this.album= res.data.response ;   
+            this.album.forEach(elm => {
+                if(! this.genreAlbum.includes(elm.genre)){
+                    this.genreAlbum.push(elm.genre)
+                }
+            });
+            this.$emit("addGenre",this.genreAlbum )
         })
     }
 }

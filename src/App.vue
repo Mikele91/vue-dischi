@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-      <Header @search ="searchAlbum"/>
-      <Albums :music="selectMusic"/>
+      <Header @search ="searchAlbum" :ciccio ="pippo"/>
+      <Albums :music="selectMusic" @addGenre="saveArrey"/>
       
 
     </div>
@@ -22,14 +22,20 @@ export default {
   },
   data(){
     return {
-      selectMusic :""
+      selectMusic :"",
+      pippo:[],
       }
   },
   methods:{
         searchAlbum(text){
 
           this.selectMusic = text;
+        },
+        saveArrey(genreArrey){
+          this.pippo = genreArrey
+
         }
+
     },
 }
 </script>
