@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-      <Header/>
-      <Albums/>
+      <Header @search ="searchAlbum"/>
+      <Albums :music="selectMusic"/>
       
 
     </div>
@@ -19,7 +19,18 @@ export default {
     Header,
     Albums,
     
-  }
+  },
+  data(){
+    return {
+      selectMusic :""
+      }
+  },
+  methods:{
+        searchAlbum(text){
+
+          this.selectMusic = text;
+        }
+    },
 }
 </script>
 
